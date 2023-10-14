@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SepetDetay {
+class SepetDetay : Codable {
     var yemek_id:Int?
     var yemek_ad:String?
     var yemek_resim:String?

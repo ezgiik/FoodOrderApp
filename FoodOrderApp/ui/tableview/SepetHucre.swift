@@ -8,7 +8,14 @@
 import UIKit
 
 class SepetHucre: UITableViewCell {
-
+    @IBOutlet weak var imageViewYemek: UIImageView!
+    
+    @IBOutlet weak var yemekAdiLabel: UILabel!
+    
+    @IBOutlet weak var yemekToplamFiyat: UILabel!
+    @IBOutlet weak var yemekAdetLabel: UILabel!
+    @IBOutlet weak var yemekFiyatLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +27,7 @@ class SepetHucre: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func yemekSilButton(_ sender: Any) {
+    }
+    
 }

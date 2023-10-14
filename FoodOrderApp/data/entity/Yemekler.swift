@@ -7,15 +7,15 @@
 
 import Foundation
 
-class Yemekler {
-    var yemek_id:Int?
-    var yemek_ad:String?
+class Yemekler : Codable {
+    var yemek_id:String?
+    var yemek_adi:String?
     var yemek_resim:String?
-    var yemek_fiyat:Int?
+    var yemek_fiyat:String?
     
-    init(yemek_id: Int, yemek_ad: String, yemek_resim: String, yemek_fiyat: Int) {
+    init(yemek_id: String, yemek_adi: String, yemek_resim: String, yemek_fiyat: String) {
         self.yemek_id = yemek_id
-        self.yemek_ad = yemek_ad
+        self.yemek_adi = yemek_adi
         self.yemek_resim = yemek_resim
         self.yemek_fiyat = yemek_fiyat
     }

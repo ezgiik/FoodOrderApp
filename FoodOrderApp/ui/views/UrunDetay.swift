@@ -8,22 +8,40 @@
 import UIKit
 
 class UrunDetay: UIViewController {
-
+    
+    @IBOutlet weak var yemekToplamFiyat: UILabel!
+    @IBOutlet weak var adetLabel: UILabel!
+    
+    @IBOutlet weak var yemekAdiLabel: UILabel!
+    @IBOutlet weak var yemekFiyatLabel: UILabel!
+    @IBOutlet weak var imageViewYemek: UIImageView!
+    
+    var viewModel = UrunDetayViewModel()
+    
+    var yemek:Yemekler?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let y = yemek {
+            yemekAdiLabel.text = y.yemek_adi
+            imageViewYemek.image = UIImage(named: y.yemek_resim!)
+            yemekFiyatLabel.text = "₺" + String(describing: y.yemek_fiyat!)
+          }
+                
+        }
+        
+        @IBAction func adetEkleButton(_ sender: Any) {
+            
+        }
+        
+        @IBAction func adetCikarButton(_ sender: Any) {
+            
+        }
+        @IBAction func sepeteEkleButton(_ sender: Any) {
+            viewModel.sepeteEkle()
+        }
+        
+        
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}

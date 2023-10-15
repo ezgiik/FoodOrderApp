@@ -17,4 +17,6 @@ class YemeklerHucre: UICollectionViewCell {
     
     @IBAction func adetEkleButton(_ sender: Any) {
     }
+    
+    
 }

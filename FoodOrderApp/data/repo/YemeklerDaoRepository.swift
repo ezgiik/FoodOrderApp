@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import RxSwift
+import Kingfisher
 
 class YemeklerDaoRepository{
     var yemeklerListesi = BehaviorSubject<[Yemekler]>(value:[Yemekler]())
@@ -46,4 +47,6 @@ class YemeklerDaoRepository{
         }
         
     }
+    
+  
 }

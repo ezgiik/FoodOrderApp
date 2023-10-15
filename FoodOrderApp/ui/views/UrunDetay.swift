@@ -25,7 +25,7 @@ class UrunDetay: UIViewController {
         
         if let y = yemek {
             yemekAdiLabel.text = y.yemek_adi
-            imageViewYemek.image = UIImage(named: y.yemek_resim!)
+            //imageViewYemek.image = UIImage(named: y.yemek_resim!)
             yemekFiyatLabel.text = "₺" + String(describing: y.yemek_fiyat!)
           }
                 

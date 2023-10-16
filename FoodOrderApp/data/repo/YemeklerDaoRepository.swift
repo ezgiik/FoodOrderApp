@@ -13,12 +13,17 @@ import Kingfisher
 class YemeklerDaoRepository{
     var yemeklerListesi = BehaviorSubject<[Yemekler]>(value:[Yemekler]())
     
-    func adetEkle (adet:Int, yemek_toplam:Int){
+    var urunAdet: Int = 1
+    func adetEkle (){
+      urunAdet += 1
         
     }
-    func adetCikar (adet:Int, yemek_toplam:Int){
-        
+    func adetCikar (){
+        if urunAdet > 1 {
+           urunAdet -= 1
     }
+    }
+    
     func sepeteEkle() {
         
     }
@@ -42,11 +47,8 @@ class YemeklerDaoRepository{
                 }catch{
                     print(error.localizedDescription)
                 }
-            
             }
         }
         
     }
-    
-  
 }

@@ -46,24 +46,12 @@ class Anasayfa: UIViewController {
             }
         })
         
-        self.fetchData()
-    }
-    
-    func fetchData(){
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.yemekleriYukle()
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetay" {
-            if let yemek = sender as? Yemekler {
-                let gidilecekVC = segue.destination as! UrunDetay
-                gidilecekVC.yemek = yemek
-            }
-        }
-    }
+    
 }
 
 extension Anasayfa : UISearchBarDelegate {
@@ -102,6 +90,15 @@ extension Anasayfa : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let yemek = yemeklerListesi[indexPath.row]
         performSegue(withIdentifier: "toDetay", sender: yemek)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetay" {
+            if let yemek = sender as? Yemekler {
+                let gidilecekVC = segue.destination as! UrunDetay
+                gidilecekVC.yemek = yemek
+            }
+        }
     }
     
     

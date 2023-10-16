@@ -23,19 +23,27 @@ class UrunDetay: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        adetLabel.text = "\(viewModel.yrepo.urunAdet)"
+        
         if let y = yemek {
             yemekAdiLabel.text = y.yemek_adi
-            imageViewYemek.image = UIImage(named: y.yemek_resim!)
-            yemekFiyatLabel.text = "₺" + String(describing: y.yemek_fiyat!)
+            yemekFiyatLabel.text = "₺" + String(y.yemek_fiyat!)
+            if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(y.yemek_resim_adi!)"){
+                    DispatchQueue.main.async {
+                        self.imageViewYemek.kf.setImage(with: url)
+                    }
+                }
           }
-                
         }
         
         @IBAction func adetEkleButton(_ sender: Any) {
-            
+            viewModel.adetEkle()
+            adetLabel.text = "\(viewModel.yrepo.urunAdet)"
         }
         
         @IBAction func adetCikarButton(_ sender: Any) {
+            viewModel.adetCikar()
+            adetLabel.text = "\(viewModel.yrepo.urunAdet)"
             
         }
         @IBAction func sepeteEkleButton(_ sender: Any) {

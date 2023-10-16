@@ -7,6 +7,8 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
+import Alamofire
 
 class Anasayfa: UIViewController {
     
@@ -24,6 +26,19 @@ class Anasayfa: UIViewController {
         yemeklerCollectionView.delegate = self
         yemeklerCollectionView.dataSource = self
         
+        let tasarim = UICollectionViewFlowLayout()
+        
+        tasarim.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        tasarim.minimumLineSpacing = 10
+        tasarim.minimumInteritemSpacing = 10
+        
+        let ekranGenislik = UIScreen.main.bounds.width
+        let itemGenislik = (ekranGenislik - 30) / 2
+        
+        tasarim.itemSize = CGSize(width: itemGenislik, height: itemGenislik*1.6)
+        
+        yemeklerCollectionView.collectionViewLayout = tasarim
+        
         _ = viewModel.yemeklerListesi.subscribe(onNext: { liste in
             self.yemeklerListesi = liste
             DispatchQueue.main.async {
@@ -36,14 +51,7 @@ class Anasayfa: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         viewModel.yemekleriYukle()
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetay" {
-            if let yemek = sender as? Yemekler {
-                let gidilecekVC = segue.destination as! UrunDetay
-                gidilecekVC.yemek = yemek
-            }
-        }
-    }
+    
 }
 
 extension Anasayfa : UISearchBarDelegate {
@@ -62,10 +70,19 @@ extension Anasayfa : UICollectionViewDelegate, UICollectionViewDataSource{
         let hucre = collectionView.dequeueReusableCell(withReuseIdentifier: "yemeklerHucre", for: indexPath) as! YemeklerHucre
         
         let yemek = yemeklerListesi[indexPath.row]
-        //hucre.imageViewYemek.image = UIImage(named: yemek.yemek_resim)
+        
+        if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(yemek.yemek_resim_adi!)"){
+                DispatchQueue.main.async {
+                    hucre.imageViewYemek.kf.setImage(with: url)
+                }
+            }
+    
         hucre.yemekAdiLabel.text = yemek.yemek_adi
         hucre.yemekFiyatLabel.text = yemek.yemek_fiyat
         
+        hucre.layer.borderColor = UIColor.lightGray.cgColor
+        hucre.layer.borderWidth = 0.3
+        hucre.layer.cornerRadius = 10
         
         return hucre
     }
@@ -73,6 +90,15 @@ extension Anasayfa : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let yemek = yemeklerListesi[indexPath.row]
         performSegue(withIdentifier: "toDetay", sender: yemek)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetay" {
+            if let yemek = sender as? Yemekler {
+                let gidilecekVC = segue.destination as! UrunDetay
+                gidilecekVC.yemek = yemek
+            }
+        }
     }
     
     

@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import Kingfisher
 
 class AnasayfaViewModel{
     var yrepo = YemeklerDaoRepository()
@@ -23,4 +24,6 @@ class AnasayfaViewModel{
     func yemekleriYukle(){
         yrepo.yemekleriYukle()
     }
+    
+    
 }

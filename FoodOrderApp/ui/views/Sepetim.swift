@@ -41,13 +41,15 @@ extension Sepetim : UITableViewDelegate, UITableViewDataSource {
         
         let yemek = sepetListesi[indexPath.row]
         
-        hucre.imageViewYemek.image = UIImage(named: yemek.yemek_resim!)
-        hucre.yemekAdiLabel.text = "\(yemek.yemek_ad!)"
-        hucre.yemekFiyatLabel.text = "₺" + String(yemek.yemek_fiyat!)
-        hucre.yemekAdetLabel.text = String(yemek.yemek_adet!)
-        
-        
-        
+        if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(yemek.yemek_resim_adi!)"){
+                DispatchQueue.main.async {
+                    hucre.imageViewYemek.kf.setImage(with: url)
+                }
+            }
+        hucre.yemekAdiLabel.text = yemek.yemek_adi!
+        hucre.yemekFiyatLabel.text = "₺" + yemek.yemek_fiyat!
+        hucre.yemekAdetLabel.text = yemek.yemek_siparis_adet!
+
         return hucre
     }
     

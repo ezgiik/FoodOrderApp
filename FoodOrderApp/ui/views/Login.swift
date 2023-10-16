@@ -19,7 +19,6 @@ class Login: UIViewController {
         
     }
     
-
     @IBAction func loginButton(_ sender: Any) {
         if emailTextField.text != "" && passwordTextField.text != "" {
             

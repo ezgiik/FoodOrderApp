@@ -17,7 +17,10 @@ class UrunDetayViewModel {
     var yrepo = YemeklerDaoRepository()
     
     init(){
-        //sepetListesi = yrepo.sepetListesi
+        yemekAdet = yrepo.yemekAdet
+        yemekToplamFiyat = yrepo.yemekToplamFiyat
+                
+        sepetListesi = yrepo.sepetListesi
     }
     
     func adetEkle (){

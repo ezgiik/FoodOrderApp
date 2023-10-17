@@ -30,8 +30,8 @@
             filePath = "FoodOrderApp/ui/views/UrunDetay.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "adetEkleButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "FoodOrderApp/ui/views/UrunDetay.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "adetEkleButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "FoodOrderApp/ui/views/UrunDetay.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "adetEkleButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "adetEkle()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "FoodOrderApp/ui/viewmodel/UrunDetayViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "adetEkle()"
             landmarkType = "7">
          </BreakpointContent>
@@ -104,22 +104,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A0ABD869-08BC-4A2F-A542-07AA05B3C2D5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodOrderApp/ui/views/UrunDetay.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "adetCikarButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "969F1EC8-B2C9-40F3-9936-EB6816FEA361"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -135,6 +119,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "969F1EC8-B2C9-40F3-9936-EB6816FEA361"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodOrderApp/ui/views/UrunDetay.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "adetCikarButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "ED63C6C8-3023-44CB-95CE-C6F9664FCD21"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -142,8 +142,8 @@
             filePath = "FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "adetCikar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "FoodOrderApp/ui/viewmodel/UrunDetayViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "adetCikar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "FoodOrderApp/ui/views/UrunDetay.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "sepeteEkleButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,195 @@
             filePath = "FoodOrderApp/ui/views/UrunDetay.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "sepeteEkleButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19B54FDA-F007-4EF3-98BD-8A0275C3D456"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodOrderApp/ui/views/UrunDetay.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "sepeteEkleButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "278346BB-AEA2-43F5-8CA2-5C47CA15DF49"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodOrderApp/ui/views/UrunDetay.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "sepeteEkleButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "278346BB-AEA2-43F5-8CA2-5C47CA15DF49 - c916525328cfa462"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.UrunDetay.sepeteEkleButton(Any) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/ui/views/UrunDetay.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "1564">
+               </Location>
+               <Location
+                  uuid = "278346BB-AEA2-43F5-8CA2-5C47CA15DF49 - c916525328cfa462"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.UrunDetay.sepeteEkleButton(Any) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/ui/views/UrunDetay.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "1932">
+               </Location>
+               <Location
+                  uuid = "278346BB-AEA2-43F5-8CA2-5C47CA15DF49 - c916525328cfa462"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.UrunDetay.sepeteEkleButton(Any) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/ui/views/UrunDetay.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "2032">
+               </Location>
+               <Location
+                  uuid = "278346BB-AEA2-43F5-8CA2-5C47CA15DF49 - c916525328cfa498"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.UrunDetay.sepeteEkleButton(Any) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/ui/views/UrunDetay.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1584">
+               </Location>
+               <Location
+                  uuid = "278346BB-AEA2-43F5-8CA2-5C47CA15DF49 - c916525328cfa498"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.UrunDetay.sepeteEkleButton(Any) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/ui/views/UrunDetay.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1952">
+               </Location>
+               <Location
+                  uuid = "278346BB-AEA2-43F5-8CA2-5C47CA15DF49 - c916525328cfa498"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.UrunDetay.sepeteEkleButton(Any) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/ui/views/UrunDetay.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "2052">
+               </Location>
+               <Location
+                  uuid = "278346BB-AEA2-43F5-8CA2-5C47CA15DF49 - c916525328cfa498"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.UrunDetay.sepeteEkleButton(Any) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/ui/views/UrunDetay.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "2440">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C604693-E712-4FBF-9065-2DD98B051837"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodOrderApp/ui/views/Sepetim.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA41EA04-4633-43C7-B087-77607F6FD862"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "sepeteEkle(yemek_adi:yemek_resim_adi:yemek_fiyat:yemek_siparis_adet:kullanici_adi:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16483408-2D92-40CD-B7E1-BD18235E9669"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodOrderApp/ui/views/UrunDetay.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "sepeteEkleButton(_:)"
             landmarkType = "7">
          </BreakpointContent>

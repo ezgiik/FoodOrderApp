@@ -209,10 +209,10 @@
 			children = (
 				BEAC1C542AD73CD6002275AC /* Login.swift */,
 				BEAC1C562AD73D29002275AC /* Signup.swift */,
+				BE5198F12AD9C7170092B439 /* Profil.swift */,
 				BEAC1C3D2AD6D43B002275AC /* Anasayfa.swift */,
 				BEAC1C502AD73CA7002275AC /* UrunDetay.swift */,
 				BEAC1C522AD73CBB002275AC /* Sepetim.swift */,
-				BE5198F12AD9C7170092B439 /* Profil.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";

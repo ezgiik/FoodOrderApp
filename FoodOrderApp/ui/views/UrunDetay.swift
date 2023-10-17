@@ -23,11 +23,11 @@ class UrunDetay: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //yemekToplamFiyat
         if let y = yemek {
             
             yemekAdiLabel.text = y.yemek_adi
-            yemekFiyatLabel.text = "₺" + y.yemek_fiyat!
+            yemekFiyatLabel.text = y.yemek_fiyat!
             
             
             if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(y.yemek_resim_adi!)"){
@@ -42,21 +42,22 @@ class UrunDetay: UIViewController {
                 })
                 
                 _ = viewModel.yrepo.yemekToplamFiyat.subscribe(onNext: { yemekFiyat in
-                     self.yemekToplamFiyat.text = String(yemekFiyat) + "₺"
+                     self.yemekToplamFiyat.text = String(yemekFiyat)
                 })
             }
         }
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        yemekToplamFiyat.text = yemek?.yemek_fiyat
+    }
     @IBAction func adetEkleButton(_ sender: Any) {
         viewModel.adetEkle()
         viewModel.yrepo.fiyatHesapla(fiyat: Int((yemek?.yemek_fiyat)!)!)
     }
-    
     @IBAction func adetCikarButton(_ sender: Any) {
         viewModel.adetCikar()
         viewModel.yrepo.fiyatHesapla(fiyat: Int((yemek?.yemek_fiyat)!)!)
-        
+
     }
     
     @IBAction func sepeteEkleButton(_ sender: Any) {
@@ -79,6 +80,14 @@ class UrunDetay: UIViewController {
         }
         
         performSegue(withIdentifier: "toSepet", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSepet" {
+            if let yemek = sender as? Yemekler {
+                let gidilecekVC = segue.destination as! Sepetim
+                gidilecekVC.yemek = yemek
+            }
+        }
     }
 }
 

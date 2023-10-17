@@ -443,14 +443,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="6V0-0F-18D"/>
                                 </constraints>
-                                <color key="tintColor" red="0.92128556969999997" green="0.43980244540000002" blue="0.31505520479999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.94901960784313721" green="0.25490196078431371" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sepete Ekle">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="27"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="sepeteEkleButton:" destination="0zl-zg-0w1" eventType="touchUpInside" id="fio-jC-z0y"/>
-                                    <segue destination="ram-fW-Syb" kind="presentation" identifier="toSepet" modalPresentationStyle="fullScreen" id="GJ1-w4-8hs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFB-sC-5ns">
@@ -481,6 +480,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJy-f9-jDv">
                                 <rect key="frame" x="184" y="531" width="58" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25-35 dk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-Tb-5l5">
+                                <rect key="frame" x="291" y="669" width="103" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -520,6 +526,7 @@
                         <outlet property="yemekAdiLabel" destination="ddS-sX-fbB" id="HIO-qT-Sgv"/>
                         <outlet property="yemekFiyatLabel" destination="myz-c7-NgR" id="TeM-Sb-iFQ"/>
                         <outlet property="yemekToplamFiyat" destination="bJ1-KO-y1m" id="1Bz-7s-bJb"/>
+                        <segue destination="ram-fW-Syb" kind="show" identifier="toSepet" id="ybE-LZ-6qX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATZ-Sz-0Xh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -531,7 +538,7 @@
             <objects>
                 <viewController id="ram-fW-Syb" customClass="Sepetim" customModule="FoodOrderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t71-MG-BIZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sepetim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsM-Ya-UvN">
@@ -541,7 +548,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E30-uZ-7In">
-                                <rect key="frame" x="47" y="782" width="298" height="51"/>
+                                <rect key="frame" x="47" y="772" width="298" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="gIS-Uu-kye"/>
                                 </constraints>
@@ -555,7 +562,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gönderim Ücreti:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f82-6L-xfH">
-                                <rect key="frame" x="13" y="676" width="130" height="21"/>
+                                <rect key="frame" x="13" y="666" width="130" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="n46-a4-cRM"/>
                                 </constraints>
@@ -564,7 +571,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toplam:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJt-a3-iQd">
-                                <rect key="frame" x="15" y="705" width="167" height="42"/>
+                                <rect key="frame" x="15" y="695" width="167" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="167" id="Brl-ox-pZ6"/>
                                 </constraints>
@@ -573,13 +580,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sepet Toplam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYm-B7-qdf">
-                                <rect key="frame" x="288" y="716" width="105" height="20"/>
+                                <rect key="frame" x="288" y="706" width="105" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oBb-MW-kyq">
-                                <rect key="frame" x="0.0" y="140" width="414" height="498"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="488"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sepetHucre" id="JzP-eX-0mW" customClass="SepetHucre" customModule="FoodOrderApp" customModuleProvider="target">
@@ -679,7 +686,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₺ 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFJ-eb-ayQ">
-                                <rect key="frame" x="369" y="676" width="25" height="21"/>
+                                <rect key="frame" x="369" y="666" width="25" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -742,7 +749,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GJ1-w4-8hs"/>
+        <segue reference="ybE-LZ-6qX"/>
         <segue reference="uqc-L3-df1"/>
     </inferredMetricsTieBreakers>
     <resources>

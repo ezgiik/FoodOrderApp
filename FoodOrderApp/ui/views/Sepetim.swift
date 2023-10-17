@@ -9,11 +9,15 @@ import UIKit
 import RxSwift
 import Alamofire
 import Kingfisher
+import Firebase
 
 class Sepetim: UIViewController {
     
     var sepetListesi = [SepetDetay]()
     var viewModel = SepetimViewModel()
+    var yemek:Yemekler?
+    
+    //var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
     
 
     @IBOutlet weak var sepetToplamLabel: UILabel!
@@ -26,10 +30,22 @@ class Sepetim: UIViewController {
         sepetTableView.delegate = self
         sepetTableView.dataSource = self
         
+        
+        
+        _ = viewModel.sepetListesi.subscribe(onNext: { liste in
+            self.sepetListesi = liste
+            DispatchQueue.main.async {
+                self.sepetTableView.reloadData()
+            }
+        })
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: )
+        let user = Auth.auth().currentUser
+        let userEmail = user!.email
+        let userName = userEmail?.components(separatedBy: "@").first
+        viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: userName!)
     }
     
 
@@ -58,6 +74,7 @@ extension Sepetim : UITableViewDelegate, UITableViewDataSource {
         hucre.yemekAdiLabel.text = yemek.yemek_adi!
         hucre.yemekFiyatLabel.text = "₺" + yemek.yemek_fiyat!
         hucre.yemekAdetLabel.text = yemek.yemek_siparis_adet!
+        //hucre.yemekToplamFiyat.text = viewModel.yrepo.yemekToplamFiyat
 
         return hucre
     }

@@ -11,8 +11,12 @@ import RxSwift
 class SepetimViewModel{
     var yrepo = YemeklerDaoRepository()
     var sepetListesi = BehaviorSubject<[SepetDetay]>(value:[SepetDetay]())
+    var yemekAdet = BehaviorSubject<Int>(value: 1)
+    var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
     
     init(){
+        yemekAdet = yrepo.yemekAdet
+        yemekToplamFiyat = yrepo.yemekToplamFiyat
         sepetListesi = yrepo.sepetListesi
     }
     

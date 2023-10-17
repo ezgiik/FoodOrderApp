@@ -10,15 +10,12 @@ import Alamofire
 import RxSwift
 import Kingfisher
 
+
 class YemeklerDaoRepository{
     var yemeklerListesi = BehaviorSubject<[Yemekler]>(value:[Yemekler]())
     var sepetListesi = BehaviorSubject<[SepetDetay]>(value:[SepetDetay]())
     var yemekAdet = BehaviorSubject<Int>(value: 1)
     var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
-    
-    //let fiyat = y.yemek_fiyat
-    //let fiyatInt = Int(fiyat!)!
-    //let yemekToplamFiyat = BehaviorSubject<Int>(value: fiyatInt)
     
     func adetEkle (){
         let currentValue = try! yemekAdet.value()
@@ -38,7 +35,7 @@ class YemeklerDaoRepository{
     }
     
     func sepeteEkle(yemek_adi:String, yemek_resim_adi:String, yemek_fiyat:Int, yemek_siparis_adet:Int, kullanici_adi:String) {
-        let params:Parameters = ["yemek_adi": yemek_adi,"yemek_resim_adi":yemek_resim_adi,"yemek_fiyat:":yemek_fiyat,"yemek_sipariş_adet":yemek_siparis_adet,"kullanici_adi":kullanici_adi]
+        let params:Parameters = ["yemek_adi":yemek_adi,"yemek_resim_adi":yemek_resim_adi,"yemek_fiyat":yemek_fiyat,"yemek_siparis_adet":yemek_siparis_adet,"kullanici_adi":kullanici_adi]
         
         AF.request("http://kasimadalan.pe.hu/yemekler/sepeteYemekEkle.php",method: .post,parameters: params).response { response 
             in
@@ -55,6 +52,7 @@ class YemeklerDaoRepository{
         }
     }
     func sepettekiYemekleriGetir(kullanici_adi: String){
+        
         let params:Parameters = ["kullanici_adi" : kullanici_adi]
         
         AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php", method: .post,parameters: params).response { response in
@@ -64,6 +62,10 @@ class YemeklerDaoRepository{
                     if let liste = response.sepet_yemekler {
                         self.sepetListesi.onNext(liste)
                     }
+                    let rawResponse = try JSONSerialization.jsonObject(with: data)
+                    print(rawResponse)
+                    
+                    
                 }catch{
                     print(error.localizedDescription)
                 }

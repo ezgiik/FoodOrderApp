@@ -78,7 +78,7 @@ extension Anasayfa : UICollectionViewDelegate, UICollectionViewDataSource{
             }
     
         hucre.yemekAdiLabel.text = yemek.yemek_adi
-        hucre.yemekFiyatLabel.text = yemek.yemek_fiyat
+        hucre.yemekFiyatLabel.text = yemek.yemek_fiyat!
         
         hucre.layer.borderColor = UIColor.lightGray.cgColor
         hucre.layer.borderWidth = 0.3

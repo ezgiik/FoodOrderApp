@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE513B302ADEAC230015820D /* SepetYemekCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE513B2F2ADEAC230015820D /* SepetYemekCevap.swift */; };
 		BE5198F22AD9C7170092B439 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5198F12AD9C7170092B439 /* Profil.swift */; };
 		BE51990F2ADB27590092B439 /* YemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51990E2ADB27590092B439 /* YemeklerCevap.swift */; };
 		BE5199122ADB2A970092B439 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BE5199112ADB2A970092B439 /* Alamofire */; };
@@ -79,6 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE513B2F2ADEAC230015820D /* SepetYemekCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetYemekCevap.swift; sourceTree = "<group>"; };
 		BE5198F12AD9C7170092B439 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
 		BE51990E2ADB27590092B439 /* YemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCevap.swift; sourceTree = "<group>"; };
 		BE5199132ADB2BD30092B439 /* CRUDCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDCevap.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				BEAC1C622AD886F1002275AC /* SepetDetay.swift */,
 				BE51990E2ADB27590092B439 /* YemeklerCevap.swift */,
 				BE5199132ADB2BD30092B439 /* CRUDCevap.swift */,
+				BE513B2F2ADEAC230015820D /* SepetYemekCevap.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				BE5199142ADB2BD30092B439 /* CRUDCevap.swift in Sources */,
 				BEAC1C3C2AD6D43B002275AC /* SceneDelegate.swift in Sources */,
 				BEAC1C5C2AD74468002275AC /* Yemekler.swift in Sources */,
+				BE513B302ADEAC230015820D /* SepetYemekCevap.swift in Sources */,
 				BEAC1C552AD73CD6002275AC /* Login.swift in Sources */,
 				BEAC1CA22AD8A724002275AC /* AnasayfaViewModel.swift in Sources */,
 				BEAC1C5F2AD7477A002275AC /* SepetHucre.swift in Sources */,

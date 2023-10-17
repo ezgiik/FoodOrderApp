@@ -12,22 +12,65 @@ import Kingfisher
 
 class YemeklerDaoRepository{
     var yemeklerListesi = BehaviorSubject<[Yemekler]>(value:[Yemekler]())
+    var sepetListesi = BehaviorSubject<[SepetDetay]>(value:[SepetDetay]())
+    var yemekAdet = BehaviorSubject<Int>(value: 1)
+    var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
     
-    var urunAdet: Int = 1
+    //let fiyat = y.yemek_fiyat
+    //let fiyatInt = Int(fiyat!)!
+    //let yemekToplamFiyat = BehaviorSubject<Int>(value: fiyatInt)
+    
     func adetEkle (){
-      urunAdet += 1
-        
+        let currentValue = try! yemekAdet.value()
+        yemekAdet.onNext(currentValue + 1)
     }
     func adetCikar (){
-        if urunAdet > 1 {
-           urunAdet -= 1
+        let currentValue = try! yemekAdet.value()
+        if currentValue > 1 {
+            yemekAdet.onNext(currentValue - 1)
+        }
     }
-    }
-    
-    func sepeteEkle() {
+    func fiyatHesapla(fiyat : Int){
+        let adet = try! yemekAdet.value()
+        let toplamFiyat = Int(adet) * fiyat
+        yemekToplamFiyat.onNext(toplamFiyat)
         
     }
     
+    func sepeteEkle(yemek_adi:String, yemek_resim_adi:String, yemek_fiyat:Int, yemek_siparis_adet:Int, kullanici_adi:String) {
+        let params:Parameters = ["yemek_adi": yemek_adi,"yemek_resim_adi":yemek_resim_adi,"yemek_fiyat:":yemek_fiyat,"yemek_sipariş_adet":yemek_siparis_adet,"kullanici_adi":kullanici_adi]
+        
+        AF.request("http://kasimadalan.pe.hu/yemekler/sepeteYemekEkle.php",method: .post,parameters: params).response { response 
+            in
+            if let data = response.data{
+                do{
+                    let cevap = try JSONDecoder().decode(CRUDCevap.self, from: data)
+                    print("-------Sepete Ekle-------")
+                    print("Başarı : \(cevap.success!)")
+                    print("Mesaj : \(cevap.message!)")
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    func sepettekiYemekleriGetir(kullanici_adi: String){
+        let params:Parameters = ["kullanici_adi" : kullanici_adi]
+        
+        AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php", method: .post,parameters: params).response { response in
+            if let data = response.data {
+                do{
+                    let response = try JSONDecoder().decode(SepetYemekCevap.self, from: data)
+                    if let liste = response.sepet_yemekler {
+                        self.sepetListesi.onNext(liste)
+                    }
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+
     func yemekSil(){
         
     }
@@ -43,12 +86,20 @@ class YemeklerDaoRepository{
                     let cevap = try JSONDecoder().decode(YemeklerCevap.self, from: data)
                     if let liste = cevap.yemekler{
                         self.yemeklerListesi.onNext(liste)
+                        
+                        if let yemekFiyatString = liste[0].yemek_fiyat, let urunFiyat = Int(yemekFiyatString) {
+                            self.yemekToplamFiyat.onNext(urunFiyat)
+                        } else {
+                            print("Yemek fiyatı geçersiz veya nil.")
+                        }
+
                     }
                 }catch{
                     print(error.localizedDescription)
                 }
             }
         }
-        
     }
+    
+    
 }

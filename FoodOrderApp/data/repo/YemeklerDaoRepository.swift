@@ -37,7 +37,7 @@ class YemeklerDaoRepository{
     func sepeteEkle(yemek_adi:String, yemek_resim_adi:String, yemek_fiyat:Int, yemek_siparis_adet:Int, kullanici_adi:String) {
         let params:Parameters = ["yemek_adi":yemek_adi,"yemek_resim_adi":yemek_resim_adi,"yemek_fiyat":yemek_fiyat,"yemek_siparis_adet":yemek_siparis_adet,"kullanici_adi":kullanici_adi]
         
-        AF.request("http://kasimadalan.pe.hu/yemekler/sepeteYemekEkle.php",method: .post,parameters: params).response { response 
+        AF.request("http://kasimadalan.pe.hu/yemekler/sepeteYemekEkle.php",method: .post,parameters: params).response { response
             in
             if let data = response.data{
                 do{
@@ -51,28 +51,58 @@ class YemeklerDaoRepository{
             }
         }
     }
-    func sepettekiYemekleriGetir(kullanici_adi: String){
-        
-        let params:Parameters = ["kullanici_adi" : kullanici_adi]
-        
-        AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php", method: .post,parameters: params).response { response in
-            if let data = response.data {
-                do{
-                    let response = try JSONDecoder().decode(SepetYemekCevap.self, from: data)
-                    if let liste = response.sepet_yemekler {
-                        self.sepetListesi.onNext(liste)
-                    }
-                    let rawResponse = try JSONSerialization.jsonObject(with: data)
-                    print(rawResponse)
-                    
-                    
-                }catch{
-                    print(error.localizedDescription)
+    
+    func sepettekiYemekleriGetir(kullanici_adi: String) {
+        let params: Parameters = ["kullanici_adi": kullanici_adi]
+
+        AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php", method: .post, parameters: params).response { response in
+            guard let data = response.data else {
+                print("Veri alınamadı.")
+                return
+            }
+            
+            do {
+                let sepetYemekCevap = try JSONDecoder().decode(SepetYemekCevap.self, from: data)
+                guard let sepetDetaylari = sepetYemekCevap.sepet_yemekler else {
+                    print("Sepet detayları alınamadı.")
+                    return
                 }
+                
+                // Yemekleri toplam adet ve fiyatlarına göre gruplayan bir sözlük oluşturun.
+                var yemekGruplari: [String: (toplamAdet: Int, toplamFiyat: Double)] = [:]
+
+                for detay in sepetDetaylari {
+                    if let yemekAdi = detay.yemek_adi, let adetStr = detay.yemek_siparis_adet, let adet = Int(adetStr), let fiyatStr = detay.yemek_fiyat, let fiyat = Double(fiyatStr) {
+                        let mevcut = yemekGruplari[yemekAdi] ?? (0, 0.0)
+                        yemekGruplari[yemekAdi] = (mevcut.toplamAdet + adet, mevcut.toplamFiyat + (fiyat * Double(adet)))
+                    }
+                }
+
+                // Yeni listeyi oluştur
+                let guncellenmisListe = yemekGruplari.map { (yemekAdi, bilgiler) -> SepetDetay in
+                    let yeniDetay = SepetDetay()
+                    yeniDetay.yemek_adi = yemekAdi
+                    yeniDetay.yemek_siparis_adet = String(bilgiler.toplamAdet)
+                    yeniDetay.yemek_toplam_fiyat = String(bilgiler.toplamFiyat)
+                    
+                    // Eksik kalan detayları da burada dolduralım.
+                    yeniDetay.yemek_resim_adi = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.yemek_resim_adi
+                    yeniDetay.sepet_yemek_id = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.sepet_yemek_id
+                    yeniDetay.kullanici_adi = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.kullanici_adi
+                    yeniDetay.yemek_fiyat = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.yemek_fiyat
+                    
+                    return yeniDetay
+                }
+
+                self.sepetListesi.onNext(guncellenmisListe)
+
+            } catch {
+                print(error)
             }
         }
     }
-
+    
+    
     func yemekSil(){
         
     }
@@ -94,7 +124,7 @@ class YemeklerDaoRepository{
                         } else {
                             print("Yemek fiyatı geçersiz veya nil.")
                         }
-
+                        
                     }
                 }catch{
                     print(error.localizedDescription)

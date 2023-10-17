@@ -72,9 +72,17 @@ extension Sepetim : UITableViewDelegate, UITableViewDataSource {
                 }
             }
         hucre.yemekAdiLabel.text = yemek.yemek_adi!
-        hucre.yemekFiyatLabel.text = "₺" + yemek.yemek_fiyat!
+        hucre.yemekFiyatLabel.text = yemek.yemek_fiyat!
         hucre.yemekAdetLabel.text = yemek.yemek_siparis_adet!
-        //hucre.yemekToplamFiyat.text = viewModel.yrepo.yemekToplamFiyat
+        
+        if let yemekFiyat = yemek.yemek_fiyat, let yemekAdet = yemek.yemek_siparis_adet, let yf = Int(yemekFiyat), let ad = Int(yemekAdet) {
+            let result = yf * ad
+            hucre.yemekToplamFiyat.text = "\(result)"
+        } else {
+            print("Fiyat veya adet değerleri uygun formatta değil.")
+        }
+        
+        
 
         return hucre
     }

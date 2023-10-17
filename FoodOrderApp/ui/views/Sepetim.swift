@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import Alamofire
+import Kingfisher
 
 class Sepetim: UIViewController {
     
     var sepetListesi = [SepetDetay]()
+    var viewModel = SepetimViewModel()
+    
 
     @IBOutlet weak var sepetToplamLabel: UILabel!
     
@@ -21,6 +26,10 @@ class Sepetim: UIViewController {
         sepetTableView.delegate = self
         sepetTableView.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: )
     }
     
 

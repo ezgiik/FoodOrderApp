@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import RxSwift
 
 class UrunDetay: UIViewController {
     
@@ -24,8 +25,10 @@ class UrunDetay: UIViewController {
         super.viewDidLoad()
         
         if let y = yemek {
+            
             yemekAdiLabel.text = y.yemek_adi
             yemekFiyatLabel.text = "₺" + y.yemek_fiyat!
+            
             
             if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(y.yemek_resim_adi!)"){
                 DispatchQueue.main.async {
@@ -37,8 +40,9 @@ class UrunDetay: UIViewController {
                 _ = viewModel.yrepo.yemekAdet.subscribe(onNext: { adet in
                     self.adetLabel.text = String(adet)
                 })
+                
                 _ = viewModel.yrepo.yemekToplamFiyat.subscribe(onNext: { yemekFiyat in
-                    self.yemekToplamFiyat.text = String(yemekFiyat) + "₺"
+                     self.yemekToplamFiyat.text = String(yemekFiyat) + "₺"
                 })
             }
         }

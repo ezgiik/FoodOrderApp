@@ -11,7 +11,14 @@ import RxSwift
 class UrunDetayViewModel {
     
     var sepetListesi = BehaviorSubject<[SepetDetay]>(value:[SepetDetay]())
+    var yemekAdet = BehaviorSubject<Int>(value: 1)
+    var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
+    
     var yrepo = YemeklerDaoRepository()
+    
+    init(){
+        //sepetListesi = yrepo.sepetListesi
+    }
     
     func adetEkle (){
         yrepo.adetEkle()

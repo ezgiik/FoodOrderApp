@@ -16,6 +16,10 @@ class YemeklerDaoRepository{
     var yemekAdet = BehaviorSubject<Int>(value: 1)
     var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
     
+    //let fiyat = y.yemek_fiyat
+    //let fiyatInt = Int(fiyat!)!
+    //let yemekToplamFiyat = BehaviorSubject<Int>(value: fiyatInt)
+    
     func adetEkle (){
         let currentValue = try! yemekAdet.value()
         yemekAdet.onNext(currentValue + 1)
@@ -50,8 +54,23 @@ class YemeklerDaoRepository{
             }
         }
     }
+    func sepettekiYemekleriGetir(kullanici_adi: String){
+        let params:Parameters = ["kullanici_adi" : kullanici_adi]
+        
+        AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php", method: .post,parameters: params).response { response in
+            if let data = response.data {
+                do{
+                    let response = try JSONDecoder().decode(SepetYemekCevap.self, from: data)
+                    if let liste = response.sepet_yemekler {
+                        self.sepetListesi.onNext(liste)
+                    }
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
 
-    
     func yemekSil(){
         
     }
@@ -68,7 +87,12 @@ class YemeklerDaoRepository{
                     if let liste = cevap.yemekler{
                         self.yemeklerListesi.onNext(liste)
                         
-                        
+                        if let yemekFiyatString = liste[0].yemek_fiyat, let urunFiyat = Int(yemekFiyatString) {
+                            self.yemekToplamFiyat.onNext(urunFiyat)
+                        } else {
+                            print("Yemek fiyatı geçersiz veya nil.")
+                        }
+
                     }
                 }catch{
                     print(error.localizedDescription)
@@ -76,4 +100,6 @@ class YemeklerDaoRepository{
             }
         }
     }
+    
+    
 }

@@ -680,6 +680,7 @@
                                             <outlet property="yemekAdetLabel" destination="Rz9-rJ-zJ7" id="c8m-r4-bU7"/>
                                             <outlet property="yemekAdiLabel" destination="EzB-xz-QHe" id="P6g-qi-NwM"/>
                                             <outlet property="yemekFiyatLabel" destination="oMK-iL-6vh" id="pkl-en-hbR"/>
+                                            <outlet property="yemekSilButton" destination="KgB-sQ-MQQ" id="WtA-rw-rzJ"/>
                                             <outlet property="yemekToplamFiyat" destination="Rnj-3i-x38" id="G2v-g8-IgZ"/>
                                         </connections>
                                     </tableViewCell>

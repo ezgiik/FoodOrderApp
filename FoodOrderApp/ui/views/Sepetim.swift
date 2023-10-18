@@ -19,7 +19,7 @@ class Sepetim: UIViewController {
     
     //var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
     
-
+    
     @IBOutlet weak var sepetToplamLabel: UILabel!
     
     @IBOutlet weak var sepetTableView: UITableView!
@@ -29,8 +29,6 @@ class Sepetim: UIViewController {
         
         sepetTableView.delegate = self
         sepetTableView.dataSource = self
-        
-        
         
         _ = viewModel.sepetListesi.subscribe(onNext: { liste in
             self.sepetListesi = liste
@@ -48,11 +46,23 @@ class Sepetim: UIViewController {
         viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: userName!)
     }
     
-
+    
     @IBAction func sepetiOnaylaButton(_ sender: Any) {
     }
     
-
+    @objc func silButtonTapped(_ sender: UIButton) {
+        if let cell = sender.superview?.superview as? SepetHucre {
+            if let indexPath = sepetTableView.indexPath(for: cell) {
+                let sepetYemek = sepetListesi[indexPath.row]
+                
+                viewModel.yrepo.yemekSil(sepet_yemek_id: Int(sepetYemek.sepet_yemek_id!)!, kullanici_adi: sepetYemek.kullanici_adi!)
+                
+                sepetListesi.remove(at: indexPath.row)
+                sepetTableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+    }
+    
 }
 
 extension Sepetim : UITableViewDelegate, UITableViewDataSource {
@@ -67,10 +77,10 @@ extension Sepetim : UITableViewDelegate, UITableViewDataSource {
         let yemek = sepetListesi[indexPath.row]
         
         if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(yemek.yemek_resim_adi!)"){
-                DispatchQueue.main.async {
-                    hucre.imageViewYemek.kf.setImage(with: url)
-                }
+            DispatchQueue.main.async {
+                hucre.imageViewYemek.kf.setImage(with: url)
             }
+        }
         hucre.yemekAdiLabel.text = yemek.yemek_adi!
         hucre.yemekFiyatLabel.text = yemek.yemek_fiyat!
         hucre.yemekAdetLabel.text = yemek.yemek_siparis_adet!
@@ -82,9 +92,11 @@ extension Sepetim : UITableViewDelegate, UITableViewDataSource {
             print("Fiyat veya adet değerleri uygun formatta değil.")
         }
         
+        hucre.yemekSilButton.addTarget(self, action: #selector(silButtonTapped(_:)), for: .touchUpInside)
         
-
         return hucre
     }
+    
+    
     
 }

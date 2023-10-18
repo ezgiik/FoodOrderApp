@@ -23,4 +23,7 @@ class SepetimViewModel{
     func sepettekiYemekleriGetir(kullanici_adi: String){
         yrepo.sepettekiYemekleriGetir(kullanici_adi: kullanici_adi)
     }
+    func yemekSil(sepet_yemek_id:Int, kullanici_adi:String){
+        yrepo.yemekSil(sepet_yemek_id: sepet_yemek_id, kullanici_adi: kullanici_adi)
+    }
 }

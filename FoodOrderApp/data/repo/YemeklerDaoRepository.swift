@@ -17,6 +17,7 @@ class YemeklerDaoRepository{
     var yemekAdet = BehaviorSubject<Int>(value: 1)
     var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
     
+    
     func adetEkle (){
         let currentValue = try! yemekAdet.value()
         yemekAdet.onNext(currentValue + 1)
@@ -101,9 +102,34 @@ class YemeklerDaoRepository{
             }
         }
     }
+    func getSepetListesiAsArray() -> [SepetDetay] {
+            do {
+                // BehaviorSubject'daki son değeri al ve diziye dönüştür.
+                return try sepetListesi.value()
+            } catch {
+                print("Hata: \(error)")
+                return []  // Hata durumunda boş bir liste dön.
+            }
+        }
     
     
-    func yemekSil(){
+    
+    func yemekSil(sepet_yemek_id:Int, kullanici_adi:String){
+        
+        let params:Parameters = ["sepet_yemek_id":sepet_yemek_id,"kullanici_adi":kullanici_adi]
+        
+        AF.request("http://kasimadalan.pe.hu/yemekler/sepettenYemekSil.php",method: .post,parameters: params).response { response in
+            if let data = response.data {
+                do{
+                    let cevap = try JSONDecoder().decode(CRUDCevap.self, from: data)
+                    print("------- DELETE -------")
+                    print("Başarı : \(cevap.success!)")
+                    print("Mesaj  : \(cevap.message!)")
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+        }
         
     }
     

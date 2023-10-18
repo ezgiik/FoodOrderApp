@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import RxSwift
 
 class SepetHucre: UITableViewCell {
     @IBOutlet weak var imageViewYemek: UIImageView!
@@ -16,18 +18,29 @@ class SepetHucre: UITableViewCell {
     @IBOutlet weak var yemekAdetLabel: UILabel!
     @IBOutlet weak var yemekFiyatLabel: UILabel!
     
+    @IBOutlet weak var yemekSilButton: UIButton!
+    
+    //var silButtonAction: ((UITableViewCell) -> Void)?
+    
+    var viewModel = SepetimViewModel()
+    
+    var yrepo = YemeklerDaoRepository()
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
 
-    @IBAction func yemekSilButton(_ sender: Any) {
+    @IBAction func yemekSilButton(_ sender: UIButton) {
+ 
     }
-    
+
 }

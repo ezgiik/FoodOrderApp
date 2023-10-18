@@ -61,14 +61,21 @@ class YemeklerDaoRepository{
                 print("Veri alınamadı.")
                 return
             }
-            
+
             do {
                 let sepetYemekCevap = try JSONDecoder().decode(SepetYemekCevap.self, from: data)
-                guard let sepetDetaylari = sepetYemekCevap.sepet_yemekler else {
+                guard var sepetDetaylari = sepetYemekCevap.sepet_yemekler else {
                     print("Sepet detayları alınamadı.")
                     return
                 }
-                
+
+                // Gelen veriyi sepet_yemek_id'ye göre sıralayalım.
+                sepetDetaylari.sort(by: { (ilkEleman, ikinciEleman) -> Bool in
+                    let id1 = Int(ilkEleman.sepet_yemek_id ?? "") ?? 0
+                    let id2 = Int(ikinciEleman.sepet_yemek_id ?? "") ?? 0
+                    return id1 < id2
+                })
+
                 // Yemekleri toplam adet ve fiyatlarına göre gruplayan bir sözlük oluşturun.
                 var yemekGruplari: [String: (toplamAdet: Int, toplamFiyat: Double)] = [:]
 
@@ -79,22 +86,23 @@ class YemeklerDaoRepository{
                     }
                 }
 
-                // Yeni listeyi oluştur
+                // Yeni listeyi oluştur.
                 let guncellenmisListe = yemekGruplari.map { (yemekAdi, bilgiler) -> SepetDetay in
                     let yeniDetay = SepetDetay()
                     yeniDetay.yemek_adi = yemekAdi
                     yeniDetay.yemek_siparis_adet = String(bilgiler.toplamAdet)
                     yeniDetay.yemek_toplam_fiyat = String(bilgiler.toplamFiyat)
-                    
+
                     // Eksik kalan detayları da burada dolduralım.
                     yeniDetay.yemek_resim_adi = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.yemek_resim_adi
                     yeniDetay.sepet_yemek_id = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.sepet_yemek_id
                     yeniDetay.kullanici_adi = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.kullanici_adi
                     yeniDetay.yemek_fiyat = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.yemek_fiyat
-                    
+
                     return yeniDetay
                 }
 
+                // Sonuçları güncellenmiş liste ile güncelle.
                 self.sepetListesi.onNext(guncellenmisListe)
 
             } catch {
@@ -102,15 +110,6 @@ class YemeklerDaoRepository{
             }
         }
     }
-    func getSepetListesiAsArray() -> [SepetDetay] {
-            do {
-                // BehaviorSubject'daki son değeri al ve diziye dönüştür.
-                return try sepetListesi.value()
-            } catch {
-                print("Hata: \(error)")
-                return []  // Hata durumunda boş bir liste dön.
-            }
-        }
     
     
     

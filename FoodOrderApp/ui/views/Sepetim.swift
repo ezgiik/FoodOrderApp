@@ -26,7 +26,7 @@ class Sepetim: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         sepetTableView.delegate = self
         sepetTableView.dataSource = self
         
@@ -37,12 +37,14 @@ class Sepetim: UIViewController {
             }
         })
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let user = Auth.auth().currentUser
         let userEmail = user!.email
         let userName = userEmail?.components(separatedBy: "@").first
+    
         viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: userName!)
     }
     
@@ -59,14 +61,14 @@ class Sepetim: UIViewController {
                 
                 sepetListesi.remove(at: indexPath.row)
                 sepetTableView.deleteRows(at: [indexPath], with: .fade)
+
             }
         }
     }
-    
 }
 
 extension Sepetim : UITableViewDelegate, UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sepetListesi.count
     }

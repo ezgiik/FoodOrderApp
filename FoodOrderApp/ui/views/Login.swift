@@ -15,9 +15,10 @@ class Login: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+       
         
     }
+
     
     @IBAction func loginButton(_ sender: Any) {
         if emailTextField.text != "" && passwordTextField.text != "" {
@@ -33,6 +34,11 @@ class Login: UIViewController {
         }else {
             makeAlert(titleInput: "Error!", messageInput: "Kullanıcı adı/Şifre?")
         }
+    }
+    
+    
+    @IBAction func uyeOlButton(_ sender: Any) {
+        performSegue(withIdentifier: "toSignUp", sender: nil)
     }
     
     func makeAlert(titleInput:String, messageInput:String){

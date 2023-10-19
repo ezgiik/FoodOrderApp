@@ -51,6 +51,13 @@ class Anasayfa: UIViewController {
         
         yemeklerCollectionView.collectionViewLayout = tasarim
         
+        
+        if let tabBarController = self.tabBarController {
+            
+            tabBarController.tabBar.tintColor = UIColor(named: "anaRenk")
+        }
+
+        
         _ = viewModel.yemeklerListesi.subscribe(onNext: { liste in
             self.yemeklerListesi = liste
             DispatchQueue.main.async {

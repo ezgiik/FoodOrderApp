@@ -19,6 +19,11 @@ class Signup: UIViewController {
 
     }
     
+    @IBAction func girisYapButton(_ sender: Any) {
+        performSegue(withIdentifier: "toLogin", sender: nil)
+    }
+    
+    
 
     @IBAction func signUpButton(_ sender: Any) {
         
@@ -37,6 +42,7 @@ class Signup: UIViewController {
         }
         
     }
+    
     func makeAlert(titleInput:String, messageInput:String){
         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)

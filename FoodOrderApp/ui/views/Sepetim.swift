@@ -12,14 +12,11 @@ import Kingfisher
 import Firebase
 
 class Sepetim: UIViewController {
-    
     var sepetListesi = [SepetDetay]()
     var viewModel = SepetimViewModel()
     var yemek:Yemekler?
     
     //var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
-    
-    
     
     @IBOutlet weak var sepetToplamLabel: UILabel!
     
@@ -46,7 +43,6 @@ class Sepetim: UIViewController {
         
         
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +66,7 @@ class Sepetim: UIViewController {
                 
                 sepetListesi.remove(at: indexPath.row)
                 sepetTableView.deleteRows(at: [indexPath], with: .fade)
-
+                
             }
         }
     }
@@ -119,6 +115,4 @@ extension Sepetim : UITableViewDelegate, UITableViewDataSource {
         return hucre
     }
     
-    
-    
-}
+    }

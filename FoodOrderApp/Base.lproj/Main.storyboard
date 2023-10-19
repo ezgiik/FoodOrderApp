@@ -259,7 +259,9 @@
                             <constraint firstItem="gvA-Yg-xEX" firstAttribute="trailing" secondItem="p8c-Jz-8VI" secondAttribute="trailing" constant="152" id="yaZ-4u-8kp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profil" image="person.fill" catalog="system" id="GaF-Io-8Gh"/>
+                    <tabBarItem key="tabBarItem" title="Profil" image="person.fill" catalog="system" id="GaF-Io-8Gh">
+                        <color key="badgeColor" name="anaRenk"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="Z2M-Lu-hqF"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLogin" modalPresentationStyle="fullScreen" id="uqc-L3-df1"/>
@@ -554,7 +556,6 @@
                             <constraint firstItem="myz-c7-NgR" firstAttribute="top" secondItem="6zl-Rm-Ske" secondAttribute="bottom" constant="24" id="2f5-Ed-W4h"/>
                             <constraint firstItem="Woy-hM-dVA" firstAttribute="bottom" secondItem="1MS-fM-Gfh" secondAttribute="bottom" constant="71" id="2s4-1v-f5J"/>
                             <constraint firstItem="Ube-yc-hdb" firstAttribute="centerX" secondItem="6zl-Rm-Ske" secondAttribute="centerX" id="4f8-PD-t79"/>
-                            <constraint firstItem="Ube-yc-hdb" firstAttribute="centerX" secondItem="kAi-u9-zeH" secondAttribute="centerX" id="4uv-fy-EWe"/>
                             <constraint firstItem="lCI-Ce-jbp" firstAttribute="leading" secondItem="bJ1-KO-y1m" secondAttribute="trailing" constant="32" id="5cj-ES-LPU"/>
                             <constraint firstItem="rRl-uP-KtB" firstAttribute="top" secondItem="6zl-Rm-Ske" secondAttribute="bottom" constant="24" id="5zO-CF-6DB"/>
                             <constraint firstItem="UJy-f9-jDv" firstAttribute="top" secondItem="ddS-sX-fbB" secondAttribute="bottom" constant="30.5" id="CoK-Ee-guV"/>
@@ -839,7 +840,9 @@
         <scene sceneID="Qzs-Pc-pAM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i7y-JY-MJ5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sepetim" image="cart.fill" catalog="system" id="aDE-Dh-gNE"/>
+                    <tabBarItem key="tabBarItem" title="Sepetim" image="cart.fill" catalog="system" id="aDE-Dh-gNE">
+                        <color key="badgeColor" name="anaRenk"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zkk-s8-xx0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -858,7 +861,9 @@
         <scene sceneID="Mlg-qC-ti7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ff7-SY-KkV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Anasayfa" image="house.fill" catalog="system" id="Znm-mK-dcu"/>
+                    <tabBarItem key="tabBarItem" title="Anasayfa" image="house.fill" catalog="system" id="Znm-mK-dcu">
+                        <color key="badgeColor" name="anaRenk"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GRA-yb-sM4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -875,7 +880,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ChW-tC-LNr"/>
+        <segue reference="uqc-L3-df1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
@@ -884,7 +889,7 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="trash.fill" catalog="system" width="117" height="128"/>
         <namedColor name="anaRenk">
-            <color red="0.99607843137254903" green="0.32941176470588235" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99599999189376831" green="0.32899999618530273" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

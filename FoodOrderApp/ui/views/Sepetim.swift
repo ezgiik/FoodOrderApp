@@ -20,6 +20,7 @@ class Sepetim: UIViewController {
     //var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
     
     
+    
     @IBOutlet weak var sepetToplamLabel: UILabel!
     
     @IBOutlet weak var sepetTableView: UITableView!
@@ -30,12 +31,20 @@ class Sepetim: UIViewController {
         sepetTableView.delegate = self
         sepetTableView.dataSource = self
         
+        let user = Auth.auth().currentUser
+        let userEmail = user!.email
+        let userName = userEmail?.components(separatedBy: "@").first
+    
+        viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: userName!)
+        
         _ = viewModel.sepetListesi.subscribe(onNext: { liste in
             self.sepetListesi = liste
             DispatchQueue.main.async {
                 self.sepetTableView.reloadData()
             }
         })
+        
+        
         
         
     }
@@ -86,6 +95,17 @@ extension Sepetim : UITableViewDelegate, UITableViewDataSource {
         hucre.yemekAdiLabel.text = yemek.yemek_adi!
         hucre.yemekFiyatLabel.text = yemek.yemek_fiyat!
         hucre.yemekAdetLabel.text = yemek.yemek_siparis_adet!
+        
+        
+        hucre.arkaPlan.backgroundColor = UIColor(white: 0.94, alpha: 1)
+        hucre.arkaPlan.layer.cornerRadius = 25
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sepetHucre", for: indexPath)
+
+
+            // UIEdgeInsets kullanarak kenar boşluklarını ayarlayın
+            let edgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            cell.contentView.layoutMargins = edgeInsets
         
         if let yemekFiyat = yemek.yemek_fiyat, let yemekAdet = yemek.yemek_siparis_adet, let yf = Int(yemekFiyat), let ad = Int(yemekAdet) {
             let result = yf * ad

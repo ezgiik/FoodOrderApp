@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE164B882AE0683D00D3B3E7 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE164B872AE0683D00D3B3E7 /* Roboto-Regular.ttf */; };
 		BE513B302ADEAC230015820D /* SepetYemekCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE513B2F2ADEAC230015820D /* SepetYemekCevap.swift */; };
 		BE5198F22AD9C7170092B439 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5198F12AD9C7170092B439 /* Profil.swift */; };
 		BE51990F2ADB27590092B439 /* YemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51990E2ADB27590092B439 /* YemeklerCevap.swift */; };
@@ -80,6 +81,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE164B872AE0683D00D3B3E7 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		BE513B2F2ADEAC230015820D /* SepetYemekCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetYemekCevap.swift; sourceTree = "<group>"; };
 		BE5198F12AD9C7170092B439 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
 		BE51990E2ADB27590092B439 /* YemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCevap.swift; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE164B822AE059CA00D3B3E7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BE164B872AE0683D00D3B3E7 /* Roboto-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		BEAC1C2D2AD6D43A002275AC = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +189,7 @@
 				BEAC1C422AD6D43C002275AC /* Assets.xcassets */,
 				BEAC1C442AD6D43C002275AC /* LaunchScreen.storyboard */,
 				BEAC1C472AD6D43C002275AC /* Info.plist */,
+				BE164B822AE059CA00D3B3E7 /* Fonts */,
 				BEAC1C642AD898FF002275AC /* GoogleService-Info.plist */,
 			);
 			path = FoodOrderApp;
@@ -366,6 +377,7 @@
 			files = (
 				BEAC1C462AD6D43C002275AC /* LaunchScreen.storyboard in Resources */,
 				BEAC1C652AD898FF002275AC /* GoogleService-Info.plist in Resources */,
+				BE164B882AE0683D00D3B3E7 /* Roboto-Regular.ttf in Resources */,
 				BEAC1C432AD6D43C002275AC /* Assets.xcassets in Resources */,
 				BEAC1C412AD6D43B002275AC /* Main.storyboard in Resources */,
 			);

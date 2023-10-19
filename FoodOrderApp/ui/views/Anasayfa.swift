@@ -26,6 +26,18 @@ class Anasayfa: UIViewController {
         yemeklerCollectionView.delegate = self
         yemeklerCollectionView.dataSource = self
         
+        self.navigationItem.title = "Acıkan?¿"
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(named: "anaRenk")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "yaziRenk1")!,
+                                          .font: UIFont(name: "Roboto-Regular", size: 30)!]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        
+        
         let tasarim = UICollectionViewFlowLayout()
         
         tasarim.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -35,7 +47,7 @@ class Anasayfa: UIViewController {
         let ekranGenislik = UIScreen.main.bounds.width
         let itemGenislik = (ekranGenislik - 30) / 2
         
-        tasarim.itemSize = CGSize(width: itemGenislik, height: itemGenislik*1.6)
+        tasarim.itemSize = CGSize(width: itemGenislik, height: itemGenislik*1.40)
         
         yemeklerCollectionView.collectionViewLayout = tasarim
         
@@ -81,8 +93,9 @@ extension Anasayfa : UICollectionViewDelegate, UICollectionViewDataSource{
         hucre.yemekFiyatLabel.text = yemek.yemek_fiyat!
         
         hucre.layer.borderColor = UIColor.lightGray.cgColor
+        hucre.backgroundColor = UIColor(white: 0.97, alpha: 1)
         hucre.layer.borderWidth = 0.3
-        hucre.layer.cornerRadius = 10
+        hucre.layer.cornerRadius = 23
         
         return hucre
     }

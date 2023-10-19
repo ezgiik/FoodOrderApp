@@ -23,6 +23,17 @@ class UrunDetay: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let backButton = UIBarButtonItem()
+            backButton.title = "Back"
+            self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+
+            // Geri düğmesinin metin rengini ayarlamak için metin özelliklerini kullanın
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black.cgColor]
+        navigationController?.navigationBar.tintColor = UIColor.white
+        
+
+        
         //yemekToplamFiyat
         if let y = yemek {
             
@@ -79,7 +90,12 @@ class UrunDetay: UIViewController {
             }
         }
         
-        performSegue(withIdentifier: "toSepet", sender: nil)
+        let alert = UIAlertController(title: "Sepet", message: "Sepete ürün eklendi", preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+        
+        //performSegue(withIdentifier: "toSepet", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSepet" {

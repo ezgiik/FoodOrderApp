@@ -92,7 +92,6 @@ class UrunDetay: UIViewController {
         
         let alert = UIAlertController(title: "Sepet", message: "✔ Sepete ürün eklendi", preferredStyle: .alert)
 
-            // Görüntüleme süresini ayarlayın (5 saniye)
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.dismiss(animated: true, completion: nil)
             }

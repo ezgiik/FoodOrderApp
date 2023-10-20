@@ -46,6 +46,10 @@ class Sepetim: UIViewController {
         let userName = userEmail?.components(separatedBy: "@").first
         
         viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: userName!)
+        
+        if sepetListesi.count == 0 {
+            sepetToplamLabel.text = String(0)
+        }
     }
     
     @IBAction func sepetiOnaylaButton(_ sender: Any) {
@@ -66,13 +70,11 @@ class Sepetim: UIViewController {
                     
                     self.viewModel.yrepo.yemekSil(sepet_yemek_id: Int(id!)!, kullanici_adi: sepetYemek.kullanici_adi!)
                 }
-                
                 sepetListesi.remove(at: indexPath.row)
                 sepetTableView.deleteRows(at: [indexPath], with: .fade)
                 self.sepetTableView.reloadData()
             }
         }
-        
         
         if sepetListesi.count == 0 {
             sepetToplamLabel.text = String(0)

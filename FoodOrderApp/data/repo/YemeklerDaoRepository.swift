@@ -68,15 +68,12 @@ class YemeklerDaoRepository{
                     print("Sepet detayları alınamadı.")
                     return
                 }
-
-                // Gelen veriyi sepet_yemek_id'ye göre sıralayalım.
                 sepetDetaylari.sort(by: { (ilkEleman, ikinciEleman) -> Bool in
                     let id1 = Int(ilkEleman.sepet_yemek_id ?? "") ?? 0
                     let id2 = Int(ikinciEleman.sepet_yemek_id ?? "") ?? 0
                     return id1 < id2
                 })
 
-                // Yemekleri toplam adet ve fiyatlarına göre gruplayan bir sözlük oluşturun.
                 var yemekGruplari: [String: (toplamAdet: Int, toplamFiyat: Double)] = [:]
 
                 for detay in sepetDetaylari {
@@ -86,14 +83,12 @@ class YemeklerDaoRepository{
                     }
                 }
 
-                // Yeni listeyi oluştur.
                 let guncellenmisListe = yemekGruplari.map { (yemekAdi, bilgiler) -> SepetDetay in
                     let yeniDetay = SepetDetay()
                     yeniDetay.yemek_adi = yemekAdi
                     yeniDetay.yemek_siparis_adet = String(bilgiler.toplamAdet)
                     yeniDetay.yemek_toplam_fiyat = String(bilgiler.toplamFiyat)
 
-                    // Eksik kalan detayları da burada dolduralım.
                     yeniDetay.yemek_resim_adi = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.yemek_resim_adi
                     yeniDetay.sepet_yemek_id = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.sepet_yemek_id
                     yeniDetay.kullanici_adi = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.kullanici_adi
@@ -105,7 +100,6 @@ class YemeklerDaoRepository{
                     return yeniDetay
                 }
 
-                // Sonuçları güncellenmiş liste ile güncelle.
                 self.sepetListesi.onNext(guncellenmisListe)
 
             } catch {

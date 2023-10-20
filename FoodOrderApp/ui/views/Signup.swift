@@ -23,7 +23,6 @@ class Signup: UIViewController {
         performSegue(withIdentifier: "toLogin", sender: nil)
     }
     
-    
 
     @IBAction func signUpButton(_ sender: Any) {
         

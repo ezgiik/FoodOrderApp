@@ -78,8 +78,8 @@
             filePath = "FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "adetEkle()"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "adetCikar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -345,9 +345,9 @@
             filePath = "FoodOrderApp/ui/views/Sepetim.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -361,10 +361,10 @@
             filePath = "FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "sepeteEkle(yemek_adi:yemek_resim_adi:yemek_fiyat:yemek_siparis_adet:kullanici_adi:)"
-            landmarkType = "7">
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "YemeklerDaoRepository"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -386,22 +386,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6112D5CF-824C-49C3-8F6F-6CBB87165B4B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodOrderApp/ui/views/Sepetim.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "silButtonTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A4C2477F-32A0-4247-9E0F-B5BECAEFCF87"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -409,25 +393,9 @@
             filePath = "FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "yemekSil(sepet_yemek_id:kullanici_adi:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BDD6F161-BC15-47AE-B82A-EFBF521B13EE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodOrderApp/ui/views/Sepetim.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "silButtonTapped(_:)"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "yemekleriYukle()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -482,20 +450,68 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3EA79CF2-76C5-4A17-95EA-EC5EDACC44FB"
+            uuid = "2DE05DAE-ED2C-4B60-BEC9-EB3259941577"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodOrderApp/ui/views/Sepetim.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "silButtonTapped(_:)"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9DDECBBB-B84F-4B32-899A-8881A9AD8D47"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodOrderApp/ui/views/Sepetim.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85F13F6C-B09B-47AA-967E-A80CB468C6CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodOrderApp/ui/views/Sepetim.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2961300B-1C5E-4987-9AE1-EA8EBE2D1808"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodOrderApp/ui/views/Sepetim.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "Sepetim"
+            landmarkType = "21">
             <Locations>
                <Location
-                  uuid = "3EA79CF2-76C5-4A17-95EA-EC5EDACC44FB - 61c586a828533613"
+                  uuid = "2961300B-1C5E-4987-9AE1-EA8EBE2D1808 - 61c586a828533697"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -505,12 +521,12 @@
                   urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/ui/views/Sepetim.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "256">
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1400">
                </Location>
                <Location
-                  uuid = "3EA79CF2-76C5-4A17-95EA-EC5EDACC44FB - 61c586a828533630"
+                  uuid = "2961300B-1C5E-4987-9AE1-EA8EBE2D1808 - 61c586a828533697"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -520,9 +536,9 @@
                   urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/ui/views/Sepetim.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "1324">
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1448">
                </Location>
             </Locations>
          </BreakpointContent>

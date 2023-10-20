@@ -41,8 +41,6 @@ class Sepetim: UIViewController {
             }
         })
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +49,7 @@ class Sepetim: UIViewController {
         let userName = userEmail?.components(separatedBy: "@").first
     
         viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: userName!)
+        
     }
     
     
@@ -58,11 +57,22 @@ class Sepetim: UIViewController {
     }
     
     @objc func silButtonTapped(_ sender: UIButton) {
+        
+        
         if let cell = sender.superview?.superview as? SepetHucre {
             if let indexPath = sepetTableView.indexPath(for: cell) {
                 let sepetYemek = sepetListesi[indexPath.row]
                 
                 viewModel.yrepo.yemekSil(sepet_yemek_id: Int(sepetYemek.sepet_yemek_id!)!, kullanici_adi: sepetYemek.kullanici_adi!)
+                
+                let filtrelenmisSepet = sepetListesi.filter {sepet in
+                    return sepet.yemek_adi == sepetYemek.yemek_adi
+                }.first
+                
+                for id in filtrelenmisSepet!.idList!{
+                    
+                    self.viewModel.yrepo.yemekSil(sepet_yemek_id: Int(id!)!, kullanici_adi: sepetYemek.kullanici_adi!)
+                }
                 
                 sepetListesi.remove(at: indexPath.row)
                 sepetTableView.deleteRows(at: [indexPath], with: .fade)

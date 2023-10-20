@@ -72,6 +72,11 @@ class Sepetim: UIViewController {
                 self.sepetTableView.reloadData()
             }
         }
+        
+        
+        if sepetListesi.count == 0 {
+            sepetToplamLabel.text = String(0)
+        }
     }
 }
 

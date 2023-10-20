@@ -100,7 +100,7 @@ extension Anasayfa : UICollectionViewDelegate, UICollectionViewDataSource{
         hucre.yemekFiyatLabel.text = yemek.yemek_fiyat!
         
         hucre.layer.borderColor = UIColor.lightGray.cgColor
-        hucre.backgroundColor = UIColor(white: 0.97, alpha: 1)
+        hucre.backgroundColor = UIColor(white: 0.98, alpha: 1)
         hucre.layer.borderWidth = 0.3
         hucre.layer.cornerRadius = 23
         

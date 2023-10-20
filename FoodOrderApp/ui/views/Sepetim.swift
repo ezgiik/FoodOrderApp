@@ -70,6 +70,7 @@ class Sepetim: UIViewController {
                 
                 sepetListesi.remove(at: indexPath.row)
                 sepetTableView.deleteRows(at: [indexPath], with: .fade)
+                self.sepetTableView.reloadData()
             }
         }
     }

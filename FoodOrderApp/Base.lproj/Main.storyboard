@@ -517,8 +517,10 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dqm-ga-gLG">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Ara" translatesAutoresizingMaskIntoConstraints="NO" id="dqm-ga-gLG">
                                 <rect key="frame" x="0.0" y="145" width="414" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="zVS-Qe-djW" id="ACh-C8-nda"/>

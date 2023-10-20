@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE164B882AE0683D00D3B3E7 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE164B872AE0683D00D3B3E7 /* Roboto-Regular.ttf */; };
 		BE513B302ADEAC230015820D /* SepetYemekCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE513B2F2ADEAC230015820D /* SepetYemekCevap.swift */; };
 		BE5198F22AD9C7170092B439 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5198F12AD9C7170092B439 /* Profil.swift */; };
 		BE51990F2ADB27590092B439 /* YemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51990E2ADB27590092B439 /* YemeklerCevap.swift */; };
@@ -19,6 +18,7 @@
 		BE51991D2ADB31B50092B439 /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BE51991C2ADB31B50092B439 /* RxCocoa-Dynamic */; };
 		BE51991F2ADB31B50092B439 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = BE51991E2ADB31B50092B439 /* RxRelay */; };
 		BE5199222ADB43FE0092B439 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BE5199212ADB43FE0092B439 /* Kingfisher */; };
+		BE549A6A2AE2FACE000705CC /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE549A692AE2FACD000705CC /* Lobster-Regular.ttf */; };
 		BEAC1C3A2AD6D43B002275AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC1C392AD6D43B002275AC /* AppDelegate.swift */; };
 		BEAC1C3C2AD6D43B002275AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC1C3B2AD6D43B002275AC /* SceneDelegate.swift */; };
 		BEAC1C3E2AD6D43B002275AC /* Anasayfa.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC1C3D2AD6D43B002275AC /* Anasayfa.swift */; };
@@ -81,11 +81,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BE164B872AE0683D00D3B3E7 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		BE513B2F2ADEAC230015820D /* SepetYemekCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetYemekCevap.swift; sourceTree = "<group>"; };
 		BE5198F12AD9C7170092B439 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
 		BE51990E2ADB27590092B439 /* YemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCevap.swift; sourceTree = "<group>"; };
 		BE5199132ADB2BD30092B439 /* CRUDCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDCevap.swift; sourceTree = "<group>"; };
+		BE549A692AE2FACD000705CC /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
 		BEAC1C362AD6D43B002275AC /* FoodOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAC1C392AD6D43B002275AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEAC1C3B2AD6D43B002275AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		BE164B822AE059CA00D3B3E7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				BE164B872AE0683D00D3B3E7 /* Roboto-Regular.ttf */,
+				BE549A692AE2FACD000705CC /* Lobster-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -376,8 +376,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAC1C462AD6D43C002275AC /* LaunchScreen.storyboard in Resources */,
+				BE549A6A2AE2FACE000705CC /* Lobster-Regular.ttf in Resources */,
 				BEAC1C652AD898FF002275AC /* GoogleService-Info.plist in Resources */,
-				BE164B882AE0683D00D3B3E7 /* Roboto-Regular.ttf in Resources */,
 				BEAC1C432AD6D43C002275AC /* Assets.xcassets in Resources */,
 				BEAC1C412AD6D43B002275AC /* Main.storyboard in Resources */,
 			);

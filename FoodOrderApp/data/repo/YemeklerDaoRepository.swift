@@ -98,6 +98,9 @@ class YemeklerDaoRepository{
                     yeniDetay.sepet_yemek_id = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.sepet_yemek_id
                     yeniDetay.kullanici_adi = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.kullanici_adi
                     yeniDetay.yemek_fiyat = sepetDetaylari.first(where: { $0.yemek_adi == yemekAdi })?.yemek_fiyat
+                    
+                    yeniDetay.idList = sepetDetaylari.filter { $0.yemek_adi == yemekAdi }.map {
+                        $0.sepet_yemek_id}
 
                     return yeniDetay
                 }

@@ -23,7 +23,6 @@ class Sepetim: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         sepetTableView.delegate = self
         sepetTableView.dataSource = self
         

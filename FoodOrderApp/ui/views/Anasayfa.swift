@@ -36,8 +36,6 @@ class Anasayfa: UIViewController {
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
-        
-        
         let tasarim = UICollectionViewFlowLayout()
         
         tasarim.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -57,7 +55,6 @@ class Anasayfa: UIViewController {
             tabBarController.tabBar.tintColor = UIColor(named: "anaRenk")
         }
 
-        
         _ = viewModel.yemeklerListesi.subscribe(onNext: { liste in
             self.yemeklerListesi = liste
             DispatchQueue.main.async {
@@ -66,7 +63,6 @@ class Anasayfa: UIViewController {
         })
         
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         viewModel.yemekleriYukle()
     }
@@ -120,8 +116,6 @@ extension Anasayfa : UICollectionViewDelegate, UICollectionViewDataSource{
             }
         }
     }
-    
-    
 }
 
 

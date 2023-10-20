@@ -46,7 +46,6 @@ class UrunDetay: UIViewController {
                 _ = viewModel.yrepo.yemekAdet.subscribe(onNext: { adet in
                     self.adetLabel.text = String(adet)
                 })
-                
                 _ = viewModel.yrepo.yemekToplamFiyat.subscribe(onNext: { yemekFiyat in
                      self.yemekToplamFiyat.text = String(yemekFiyat)
                 })
@@ -76,8 +75,6 @@ class UrunDetay: UIViewController {
             let alert = UIAlertController(title: "Hata", message: "Lütfen giriş yapınız", preferredStyle: UIAlertController.Style.alert)
             let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
             
-            
-            
             alert.addAction(okButton)
             self.present(alert, animated: true, completion: nil)
         }
@@ -88,12 +85,19 @@ class UrunDetay: UIViewController {
             }
         }
         
-        let alert = UIAlertController(title: "Sepet", message: "Sepete ürün eklendi", preferredStyle: UIAlertController.Style.alert)
-        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-        alert.addAction(okButton)
-        self.present(alert, animated: true, completion: nil)
+        //let alert = UIAlertController(title: "Sepet", message: "Sepete ürün eklendi", preferredStyle: UIAlertController.Style.alert)
+        //let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        //alert.addAction(okButton)
+        //self.present(alert, animated: true, completion: nil)
         
-        //performSegue(withIdentifier: "toSepet", sender: nil)
+        let alert = UIAlertController(title: "Sepet", message: "✔ Sepete ürün eklendi", preferredStyle: .alert)
+
+            // Görüntüleme süresini ayarlayın (5 saniye)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.dismiss(animated: true, completion: nil)
+            }
+
+            self.present(alert, animated: true, completion: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSepet" {

@@ -23,7 +23,4 @@ class Profil: UIViewController {
             print("error")
         }
     }
-    
-    
-    
 }

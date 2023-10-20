@@ -21,8 +21,8 @@ class AnasayfaViewModel{
         yrepo.ara(aramaKelimesi: aramaKelimesi)
     }
     
-    func yemekleriYukle(){
-        yrepo.yemekleriYukle()
+    func yemekleriYukle(aramaKelimesi:String){
+        yrepo.yemekleriYukle(aramaKelimesi:aramaKelimesi)
     }
     
     

@@ -64,14 +64,14 @@ class Anasayfa: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.yemekleriYukle()
+        viewModel.yemekleriYukle(aramaKelimesi: "")
     }
     
 }
 
 extension Anasayfa : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.ara(aramaKelimesi: searchText)
+        viewModel.yemekleriYukle(aramaKelimesi: searchText)
     }
 }
 

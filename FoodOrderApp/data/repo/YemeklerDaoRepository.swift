@@ -128,17 +128,24 @@ class YemeklerDaoRepository{
     }
     
     func ara(aramaKelimesi:String){
-        
-    }
+     
+        }
     
-    func yemekleriYukle(){
+    func yemekleriYukle(aramaKelimesi:String){
         AF.request("http://kasimadalan.pe.hu/yemekler/tumYemekleriGetir.php", method: .get).response { response in
             if let data = response.data {
                 do{
                     let cevap = try JSONDecoder().decode(YemeklerCevap.self, from: data)
                     if let liste = cevap.yemekler{
-                        self.yemeklerListesi.onNext(liste)
+                        if !aramaKelimesi.isEmpty && liste.count>0
+                        {
+                            var filter = liste.filter { $0.yemek_adi!.contains(aramaKelimesi) }
+                            self.yemeklerListesi.onNext(filter)
+                        }else{
+                            self.yemeklerListesi.onNext(liste)
+                        }
                         
+        
                         if let yemekFiyatString = liste[0].yemek_fiyat, let urunFiyat = Int(yemekFiyatString) {
                             self.yemekToplamFiyat.onNext(urunFiyat)
                         } else {

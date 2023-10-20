@@ -393,9 +393,9 @@
             filePath = "FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "yemekleriYukle()"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "yemekleriYukle(aramaKelimesi:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -541,6 +541,129 @@
             endingLineNumber = "75"
             landmarkName = "silButtonTapped(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1ACD87C-DA8B-4148-AEFA-A168062BDE49"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "ara(aramaKelimesi:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B1ACD87C-DA8B-4148-AEFA-A168062BDE49 - ccb42e67345115a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.YemeklerDaoRepository.ara(aramaKelimesi: Swift.String) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "B1ACD87C-DA8B-4148-AEFA-A168062BDE49 - be1a7f16cdc765ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in FoodOrderApp.YemeklerDaoRepository.ara(aramaKelimesi: Swift.String) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "B1ACD87C-DA8B-4148-AEFA-A168062BDE49 - 9e63797a0fa12174"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.YemeklerDaoRepository.ara() -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "B1ACD87C-DA8B-4148-AEFA-A168062BDE49 - 76ea954e94b8c2fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in FoodOrderApp.YemeklerDaoRepository.ara() -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "B1ACD87C-DA8B-4148-AEFA-A168062BDE49 - ccb42e67345115a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.YemeklerDaoRepository.ara(aramaKelimesi: Swift.String) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "B1ACD87C-DA8B-4148-AEFA-A168062BDE49 - be1a7f16cdc765ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in FoodOrderApp.YemeklerDaoRepository.ara(aramaKelimesi: Swift.String) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "B1ACD87C-DA8B-4148-AEFA-A168062BDE49 - ccb42e6734511587"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodOrderApp.YemeklerDaoRepository.ara(aramaKelimesi: Swift.String) -&gt; ()"
+                  moduleName = "FoodOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezgikarabay/Desktop/techcareer%20ios/FoodOrderApp/FoodOrderApp/data/repo/YemeklerDaoRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

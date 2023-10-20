@@ -25,6 +25,8 @@ class Sepetim: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
+        
+        
         sepetTableView.delegate = self
         sepetTableView.dataSource = self
         
@@ -57,6 +59,8 @@ class Sepetim: UIViewController {
     }
     
     @objc func silButtonTapped(_ sender: UIButton) {
+        
+        
         
         
         if let cell = sender.superview?.superview as? SepetHucre {
@@ -102,23 +106,21 @@ extension Sepetim : UITableViewDelegate, UITableViewDataSource {
         hucre.yemekFiyatLabel.text = yemek.yemek_fiyat!
         hucre.yemekAdetLabel.text = yemek.yemek_siparis_adet!
         
-        
-        hucre.arkaPlan.backgroundColor = UIColor(white: 0.94, alpha: 1)
-        hucre.arkaPlan.layer.cornerRadius = 25
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "sepetHucre", for: indexPath)
-
-
-            // UIEdgeInsets kullanarak kenar boşluklarını ayarlayın
-            let edgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-            cell.contentView.layoutMargins = edgeInsets
-        
         if let yemekFiyat = yemek.yemek_fiyat, let yemekAdet = yemek.yemek_siparis_adet, let yf = Int(yemekFiyat), let ad = Int(yemekAdet) {
             let result = yf * ad
             hucre.yemekToplamFiyat.text = "\(result)"
         } else {
             print("Fiyat veya adet değerleri uygun formatta değil.")
         }
+        
+        let toplam = sepetListesi.reduce(0) {
+            $0 + Int(Double($1.yemek_toplam_fiyat ?? "0") ?? 0)
+        }
+        sepetToplamLabel.text = String(toplam)
+        
+        
+        hucre.arkaPlan.backgroundColor = UIColor(white: 0.94, alpha: 1)
+        hucre.arkaPlan.layer.cornerRadius = 25
         
         hucre.yemekSilButton.addTarget(self, action: #selector(silButtonTapped(_:)), for: .touchUpInside)
         

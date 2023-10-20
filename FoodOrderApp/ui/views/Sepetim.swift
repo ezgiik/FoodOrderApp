@@ -16,15 +16,12 @@ class Sepetim: UIViewController {
     var viewModel = SepetimViewModel()
     var yemek:Yemekler?
     
-    //var yemekToplamFiyat = BehaviorSubject<Int>(value: 0)
-    
     @IBOutlet weak var sepetToplamLabel: UILabel!
     
     @IBOutlet weak var sepetTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
         
         
         sepetTableView.delegate = self
@@ -33,7 +30,7 @@ class Sepetim: UIViewController {
         let user = Auth.auth().currentUser
         let userEmail = user!.email
         let userName = userEmail?.components(separatedBy: "@").first
-    
+        
         viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: userName!)
         
         _ = viewModel.sepetListesi.subscribe(onNext: { liste in
@@ -42,27 +39,20 @@ class Sepetim: UIViewController {
                 self.sepetTableView.reloadData()
             }
         })
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let user = Auth.auth().currentUser
         let userEmail = user!.email
         let userName = userEmail?.components(separatedBy: "@").first
-    
-        viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: userName!)
         
+        viewModel.yrepo.sepettekiYemekleriGetir(kullanici_adi: userName!)
     }
-    
     
     @IBAction func sepetiOnaylaButton(_ sender: Any) {
     }
     
     @objc func silButtonTapped(_ sender: UIButton) {
-        
-        
-        
-        
         if let cell = sender.superview?.superview as? SepetHucre {
             if let indexPath = sepetTableView.indexPath(for: cell) {
                 let sepetYemek = sepetListesi[indexPath.row]
@@ -80,14 +70,13 @@ class Sepetim: UIViewController {
                 
                 sepetListesi.remove(at: indexPath.row)
                 sepetTableView.deleteRows(at: [indexPath], with: .fade)
-                
             }
         }
     }
 }
 
 extension Sepetim : UITableViewDelegate, UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sepetListesi.count
     }
@@ -118,7 +107,6 @@ extension Sepetim : UITableViewDelegate, UITableViewDataSource {
         }
         sepetToplamLabel.text = String(toplam)
         
-        
         hucre.arkaPlan.backgroundColor = UIColor(white: 0.94, alpha: 1)
         hucre.arkaPlan.layer.cornerRadius = 25
         
@@ -127,4 +115,4 @@ extension Sepetim : UITableViewDelegate, UITableViewDataSource {
         return hucre
     }
     
-    }
+}

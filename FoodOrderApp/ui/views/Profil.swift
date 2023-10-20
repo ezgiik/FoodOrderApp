@@ -9,15 +9,13 @@ import UIKit
 import Firebase
 
 class Profil: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func logoutButton(_ sender: Any) {
-        
         do{
             try Auth.auth().signOut()
             self.performSegue(withIdentifier: "toLogin", sender: nil)

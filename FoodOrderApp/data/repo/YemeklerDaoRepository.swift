@@ -114,8 +114,6 @@ class YemeklerDaoRepository{
         }
     }
     
-    
-    
     func yemekSil(sepet_yemek_id:Int, kullanici_adi:String){
         
         let params:Parameters = ["sepet_yemek_id":sepet_yemek_id,"kullanici_adi":kullanici_adi]
@@ -152,7 +150,6 @@ class YemeklerDaoRepository{
                         } else {
                             print("Yemek fiyatı geçersiz veya nil.")
                         }
-                        
                     }
                 }catch{
                     print(error.localizedDescription)

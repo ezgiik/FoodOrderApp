@@ -28,13 +28,8 @@ class UrunDetay: UIViewController {
             backButton.title = "Back"
             self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
 
-            // Geri düğmesinin metin rengini ayarlamak için metin özelliklerini kullanın
-        //self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black.cgColor]
         navigationController?.navigationBar.tintColor = UIColor.white
         
-
-        
-        //yemekToplamFiyat
         if let y = yemek {
             
             yemekAdiLabel.text = y.yemek_adi

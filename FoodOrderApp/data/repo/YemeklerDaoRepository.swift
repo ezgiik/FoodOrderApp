@@ -139,12 +139,12 @@ class YemeklerDaoRepository{
                     if let liste = cevap.yemekler{
                         if !aramaKelimesi.isEmpty && liste.count>0
                         {
-                            var filter = liste.filter { $0.yemek_adi!.contains(aramaKelimesi) }
+                            var filter = liste.filter { $0.yemek_adi!.lowercased().contains(aramaKelimesi.lowercased()) }
                             self.yemeklerListesi.onNext(filter)
+                            
                         }else{
                             self.yemeklerListesi.onNext(liste)
                         }
-                        
         
                         if let yemekFiyatString = liste[0].yemek_fiyat, let urunFiyat = Int(yemekFiyatString) {
                             self.yemekToplamFiyat.onNext(urunFiyat)

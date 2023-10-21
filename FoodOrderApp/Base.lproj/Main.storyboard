@@ -116,6 +116,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cZf-OY-3Sd"/>
                     <connections>
+                        <outlet property="acikanLabel" destination="X5N-XX-3uM" id="zbq-Py-agn"/>
                         <outlet property="emailTextField" destination="lp8-ta-aUE" id="ANp-DZ-8oA"/>
                         <outlet property="passwordTextField" destination="H6w-gj-tC4" id="vGQ-Mg-XWc"/>
                         <segue destination="gri-4v-ls0" kind="presentation" identifier="toNext" modalPresentationStyle="fullScreen" id="kCw-oo-MkK"/>

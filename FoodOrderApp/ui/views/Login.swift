@@ -12,9 +12,10 @@ class Login: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var acikanLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        acikanLabel.font = UIFont(name: "Lobster-Regular", size: 45)
        
         
     }

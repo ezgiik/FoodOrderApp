@@ -977,15 +977,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₺ 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFJ-eb-ayQ">
-                                <rect key="frame" x="357" y="664" width="26" height="23"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0x-JK-RJO">
                                 <rect key="frame" x="325" y="689" width="17" height="39"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₺ 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFJ-eb-ayQ">
+                                <rect key="frame" x="330" y="661" width="26" height="23"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -994,9 +994,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eJt-a3-iQd" firstAttribute="top" secondItem="f82-6L-xfH" secondAttribute="bottom" constant="11" id="3Hh-uQ-YaF"/>
-                            <constraint firstItem="C60-yV-R15" firstAttribute="trailing" secondItem="ZFJ-eb-ayQ" secondAttribute="trailing" constant="31" id="Brn-WU-x6U"/>
+                            <constraint firstItem="d0x-JK-RJO" firstAttribute="top" secondItem="ZFJ-eb-ayQ" secondAttribute="bottom" constant="5" id="De0-BZ-FHa"/>
                             <constraint firstItem="JsM-Ya-UvN" firstAttribute="leading" secondItem="C60-yV-R15" secondAttribute="leading" constant="153" id="Es4-ui-ZRt"/>
                             <constraint firstItem="C60-yV-R15" firstAttribute="bottom" secondItem="E30-uZ-7In" secondAttribute="bottom" constant="38" id="I9e-nA-O1g"/>
+                            <constraint firstItem="ZFJ-eb-ayQ" firstAttribute="top" secondItem="oBb-MW-kyq" secondAttribute="bottom" constant="38.5" id="JUY-yj-TXN"/>
+                            <constraint firstItem="ZFJ-eb-ayQ" firstAttribute="leading" secondItem="f82-6L-xfH" secondAttribute="trailing" constant="183" id="Kh9-GO-JI3"/>
                             <constraint firstItem="oBb-MW-kyq" firstAttribute="trailing" secondItem="C60-yV-R15" secondAttribute="trailing" id="KsV-re-6ut"/>
                             <constraint firstItem="C60-yV-R15" firstAttribute="trailing" secondItem="E30-uZ-7In" secondAttribute="trailing" constant="58" id="KwL-Lq-tdq"/>
                             <constraint firstItem="d0x-JK-RJO" firstAttribute="top" secondItem="oBb-MW-kyq" secondAttribute="bottom" constant="66.5" id="Ld6-eG-jBe"/>
@@ -1005,13 +1007,12 @@
                             <constraint firstItem="f82-6L-xfH" firstAttribute="top" secondItem="oBb-MW-kyq" secondAttribute="bottom" constant="38" id="OCa-QJ-U4W"/>
                             <constraint firstItem="f82-6L-xfH" firstAttribute="leading" secondItem="C60-yV-R15" secondAttribute="leading" constant="13" id="V1x-fB-FXe"/>
                             <constraint firstItem="eJt-a3-iQd" firstAttribute="top" secondItem="f82-6L-xfH" secondAttribute="bottom" constant="11" id="W2t-73-48A"/>
-                            <constraint firstItem="OYm-B7-qdf" firstAttribute="top" secondItem="ZFJ-eb-ayQ" secondAttribute="bottom" constant="4" id="Wks-7y-o1p"/>
                             <constraint firstItem="d0x-JK-RJO" firstAttribute="leading" secondItem="eJt-a3-iQd" secondAttribute="trailing" constant="184.5" id="arp-dp-2pJ"/>
                             <constraint firstItem="E30-uZ-7In" firstAttribute="top" secondItem="eJt-a3-iQd" secondAttribute="bottom" constant="26" id="bv8-go-Big"/>
                             <constraint firstItem="OYm-B7-qdf" firstAttribute="leading" secondItem="eJt-a3-iQd" secondAttribute="trailing" constant="200.5" id="e1u-a1-Bfi"/>
-                            <constraint firstItem="ZFJ-eb-ayQ" firstAttribute="top" secondItem="oBb-MW-kyq" secondAttribute="bottom" constant="41.5" id="fcR-2Q-AsC"/>
                             <constraint firstItem="oBb-MW-kyq" firstAttribute="leading" secondItem="C60-yV-R15" secondAttribute="leading" id="jHj-yA-iAU"/>
                             <constraint firstItem="JsM-Ya-UvN" firstAttribute="top" secondItem="C60-yV-R15" secondAttribute="top" constant="19" id="k4F-y3-dwQ"/>
+                            <constraint firstItem="C60-yV-R15" firstAttribute="trailing" secondItem="ZFJ-eb-ayQ" secondAttribute="trailing" constant="58" id="lPk-cN-y3r"/>
                             <constraint firstItem="eJt-a3-iQd" firstAttribute="leading" secondItem="C60-yV-R15" secondAttribute="leading" constant="13" id="s0J-41-YOa"/>
                             <constraint firstItem="oBb-MW-kyq" firstAttribute="top" secondItem="JsM-Ya-UvN" secondAttribute="bottom" constant="36" id="uvd-YF-JvW"/>
                             <constraint firstItem="f82-6L-xfH" firstAttribute="top" secondItem="oBb-MW-kyq" secondAttribute="bottom" constant="38" id="v3z-vC-6KA"/>

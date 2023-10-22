@@ -563,6 +563,7 @@
 				DEVELOPMENT_TEAM = 87AM47RL89;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodOrderApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Acıkan";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -591,6 +592,7 @@
 				DEVELOPMENT_TEAM = 87AM47RL89;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodOrderApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Acıkan";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

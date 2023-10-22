@@ -53,6 +53,13 @@ class Sepetim: UIViewController {
     }
     
     @IBAction func sepetiOnaylaButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Sepet Onayı", message: "✔ Siparişin alındı", preferredStyle: .alert)
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.dismiss(animated: true, completion: nil)
+            }
+
+            self.present(alert, animated: true, completion: nil)
     }
     
     @objc func silButtonTapped(_ sender: UIButton) {

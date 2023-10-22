@@ -21,7 +21,6 @@ class SepetHucre: UITableViewCell {
     @IBOutlet weak var yemekSilButton: UIButton!
     
     @IBOutlet weak var arkaPlan: UIView!
-    //var silButtonAction: ((UITableViewCell) -> Void)?
     
     var viewModel = SepetimViewModel()
     

@@ -85,11 +85,6 @@ class UrunDetay: UIViewController {
             }
         }
         
-        //let alert = UIAlertController(title: "Sepet", message: "Sepete ürün eklendi", preferredStyle: UIAlertController.Style.alert)
-        //let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-        //alert.addAction(okButton)
-        //self.present(alert, animated: true, completion: nil)
-        
         let alert = UIAlertController(title: "Sepet", message: "✔ Sepete ürün eklendi", preferredStyle: .alert)
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {

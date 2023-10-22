@@ -139,7 +139,7 @@ class YemeklerDaoRepository{
                     if let liste = cevap.yemekler{
                         if !aramaKelimesi.isEmpty && liste.count>0
                         {
-                            var filter = liste.filter { $0.yemek_adi!.lowercased().contains(aramaKelimesi.lowercased()) }
+                            let filter = liste.filter { $0.yemek_adi!.lowercased().contains(aramaKelimesi.lowercased()) }
                             self.yemeklerListesi.onNext(filter)
                             
                         }else{

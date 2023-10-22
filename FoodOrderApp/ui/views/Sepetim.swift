@@ -52,14 +52,30 @@ class Sepetim: UIViewController {
         }
     }
     
-    @IBAction func sepetiOnaylaButton(_ sender: Any) {
+    @IBAction func sepetiOnaylaButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "Sepet Onayı", message: "✔ Siparişin alındı", preferredStyle: .alert)
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.dismiss(animated: true, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        self.present(alert, animated: true, completion: nil)
+    
+        for sepet in sepetListesi{
+            let filtrelenmisSepet = sepetListesi.filter {s in
+                return s.yemek_adi == sepet.yemek_adi
+            }.first
+            for id in filtrelenmisSepet!.idList!{
+            
+                self.viewModel.yrepo.yemekSil(sepet_yemek_id: Int(id!)!, kullanici_adi: sepet.kullanici_adi!)
             }
-
-            self.present(alert, animated: true, completion: nil)
+        }
+        sepetListesi.removeAll()
+        self.sepetTableView.reloadData()
+        
+        if sepetListesi.count == 0 {
+            sepetToplamLabel.text = String(0)
+        }
     }
     
     @objc func silButtonTapped(_ sender: UIButton) {

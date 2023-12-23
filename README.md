@@ -1,4 +1,8 @@
 # FoodOrderApp
+## Description
+"Acıkan" is a food ordering application that is the final project of the iOS boot camp organized by Techcareer.net. After registering and logging in to this application, you can search for the food you want and order it by adding it to your cart. 
+## Screenshots
+
 <img width="489" alt="Ekran Resmi 2023-10-22 14 38 30" src="https://github.com/ezgiik/FoodOrderApp/assets/128503981/34a0bb26-63b6-4b41-afe5-3678e1b44bc6">
 <img width="489" alt="Ekran Resmi 2023-10-22 14 38 36" src="https://github.com/ezgiik/FoodOrderApp/assets/128503981/644c08e0-197e-42a5-aa8c-ece17e1a0464">
 <img width="489" alt="Ekran Resmi 2023-10-22 14 39 01" src="https://github.com/ezgiik/FoodOrderApp/assets/128503981/c4cca49b-1776-4168-a98e-0132c6bcdcaf">
